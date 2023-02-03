@@ -1,7 +1,6 @@
 import { Textfield, Button } from './components';
 import { RiLockPasswordLine } from 'react-icons/ri';
 import { MdOutlineEmail } from 'react-icons/md';
-import { Link } from 'react-router-dom';
 
 function App() {
 	return (
