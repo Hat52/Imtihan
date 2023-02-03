@@ -1,0 +1,9 @@
+{
+	"extends": "react-app",
+	"rules": {
+		"quotes": ["warn", "single"],
+		"no-fallthrough": 0,
+		"eol-last": ["error", "always"],
+		"jsx-quotes": ["warn", "prefer-double"]
+	}
+}
