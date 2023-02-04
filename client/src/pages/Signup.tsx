@@ -7,7 +7,7 @@ import { BsFillPersonFill } from 'react-icons/bs';
 export default function Signup() {
 	return (
 		<div className="flex flex-col gap-5 justify-center items-center  h-full w-full ">
-			<h1 className="text-typography text-[32px] font-bold">Log in</h1>
+			<h1 className="text-typography text-[32px] font-bold">Sign up</h1>
 			<Textfield
 				Icon={BsFillPersonFill}
 				onChange={() => {
