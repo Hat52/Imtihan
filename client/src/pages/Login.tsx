@@ -32,10 +32,10 @@ export default function Login() {
 				value=""
 			/>
 			<Button text="Login" onClick={() => console.log('click')} />
-			<div className="flex w-[500px] justify-between">
-				<a href="/#" className="text-sm text-typography">
+			<div className="flex w-[500px] justify-end">
+				{/* <a href="/#" className="text-sm text-typography">
 					Forgot Password?
-				</a>
+				</a> */}
 				<Link to="/signup" className="text-sm text-typography">
 					Signup?
 				</Link>
