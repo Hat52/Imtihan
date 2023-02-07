@@ -1,21 +1,11 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { Login, Signup } from './pages';
-
-const router = createBrowserRouter([
-	{
-		path: '/',
-		element: <Login />
-	},
-	{
-		path: '/signup',
-		element: <Signup />
-	}
-]);
+import { RouterProvider } from 'react-router-dom';
+import { routes } from './routes';
+import './index.css';
 
 function App() {
 	return (
 		<div className="App w-screen h-screen flex justify-center items-center">
-			<RouterProvider router={router} />
+			<RouterProvider router={routes} />
 		</div>
 	);
 }
