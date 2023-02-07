@@ -17,13 +17,40 @@ export default function Setup() {
 				You're so close! Give us a little more info and let the learning commence
 			</h3>
 			<Stepper steps={steps} className="" activeStep={activeStep} />
-			<div className=" bg-[blue] p-20">
-				<Select
-					options={options}
-					handleChange={(value) => console.log(value)}
-					value="selected value"
-				/>
+			<div className="flex items-center gap-20 min-h-[60%]">
+				<ArrowSvg className="w-40 invisible h-40 rotate-90 hover:animate-pulse" />
+				<div className="flex flex-col gap-2">
+					<h4 className="text-typography">Select Your Grade</h4>
+					<Select
+						options={options}
+						handleChange={(value) => console.log(value)}
+						value="selected value"
+					/>
+				</div>
+				<ArrowSvg className="w-40 h-40 -rotate-90 hover:animate-pulse" />
 			</div>
 		</div>
 	);
 }
+
+interface IArrowSvg {
+	className: string;
+}
+
+const ArrowSvg = ({ className }: IArrowSvg) => {
+	return (
+		<svg
+			className={className}
+			aria-hidden="true"
+			fill="none"
+			stroke="#1F37B5"
+			viewBox="0 0 24 24"
+			xmlns="http://www.w3.org/2000/svg">
+			<path
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				stroke-width="2"
+				d="M19 9l-7 7-7-7"></path>
+		</svg>
+	);
+};

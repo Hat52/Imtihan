@@ -19,7 +19,7 @@ export default function Select({ options, handleChange, value }: ISelect) {
 	useOutSideClick(wrapperRef, setVisible);
 
 	return (
-		<>
+		<div className="relative">
 			<button
 				ref={wrapperRef}
 				id="dropdownDefaultButton"
@@ -62,6 +62,6 @@ export default function Select({ options, handleChange, value }: ISelect) {
 					))}
 				</ul>
 			</div>
-		</>
+		</div>
 	);
 }
