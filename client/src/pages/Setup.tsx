@@ -19,13 +19,22 @@ export default function Setup() {
 			<Stepper steps={steps} className="" activeStep={activeStep} />
 			<div className="flex items-center gap-20 min-h-[60%]">
 				<ArrowSvg className="w-40 invisible h-40 rotate-90 hover:animate-pulse" />
-				<div className="flex flex-col gap-2">
+				{/* <div className="flex flex-col gap-2">
 					<h4 className="text-typography">Select Your Grade</h4>
 					<Select
 						options={options}
 						handleChange={(value) => console.log(value)}
 						value="selected value"
 					/>
+				</div> */}
+				<div className="flex flex-col px-10">
+					<h4 className="text-typography">Select Your Subject</h4>
+					<div className="flex gap-5 w-[500px] max-w-full py-10 flex-wrap h-auto max-h-[200px] hide-scrollbar overflow-scroll bg-secondary">
+						<Subject label="Chemistry" />
+						<Subject label="Chemistry" />
+						<Subject label="Chemistry" />
+						<Subject label="Chemistry" />
+					</div>
 				</div>
 				<ArrowSvg className="w-40 h-40 -rotate-90 hover:animate-pulse" />
 			</div>
@@ -52,5 +61,17 @@ const ArrowSvg = ({ className }: IArrowSvg) => {
 				stroke-width="2"
 				d="M19 9l-7 7-7-7"></path>
 		</svg>
+	);
+};
+
+interface ISubject {
+	label: string;
+}
+
+const Subject = ({ label }: ISubject) => {
+	return (
+		<div className="font-normal bg-typography text-secondary py-1 px-5 h-[30px] flex items-center rounded-lg hover:border-none hover:bg-dark-grey hover:text-typography">
+			<span>{label}</span>
+		</div>
 	);
 };
