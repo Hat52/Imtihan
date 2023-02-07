@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
+import { useOutSideClick } from '../hooks';
 
 interface IOptions {
 	name: string;
@@ -14,10 +15,13 @@ interface ISelect {
 
 export default function Select({ options, handleChange, value }: ISelect) {
 	const [visible, setVisible] = useState(false);
+	const wrapperRef = useRef(null);
+	useOutSideClick(wrapperRef, setVisible);
 
 	return (
 		<>
 			<button
+				ref={wrapperRef}
 				id="dropdownDefaultButton"
 				data-dropdown-toggle="dropdown"
 				onClick={() => setVisible((visible: boolean) => !visible)}
