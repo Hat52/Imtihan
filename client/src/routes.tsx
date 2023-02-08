@@ -1,5 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom';
-import { Login, Signup, Setup } from './pages';
+import { Login, Signup, Setup, Test } from './pages';
 
 export const routes = createBrowserRouter([
 	{
@@ -13,5 +13,9 @@ export const routes = createBrowserRouter([
 	{
 		path: '/setup',
 		element: <Setup />
+	},
+	{
+		path: '/test',
+		element: <Test />
 	}
 ]);

@@ -25,7 +25,7 @@ export default function Select({ options, handleChange, value }: ISelect) {
 				id="dropdownDefaultButton"
 				data-dropdown-toggle="dropdown"
 				onClick={() => setVisible((visible: boolean) => !visible)}
-				className="text-typography bg-blue-700 w-[500px] flex justify-between h-[48px] hover:bg-blue-800  focus:outline-none  font-medium rounded-lg text-sm px-4 py-2.5 text-center  items-center dark:bg-blue-600 dark:hover:bg-blue-700 "
+				className="text-typography bg-blue-700 w-[450px] flex justify-between h-[48px] hover:bg-blue-800  focus:outline-none  font-medium rounded-lg text-sm px-4 py-2.5 text-center  items-center dark:bg-blue-600 dark:hover:bg-blue-700 "
 				type="button">
 				{value || 'Select Grade'}
 				<svg
