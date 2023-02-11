@@ -7,7 +7,7 @@ const ArrowSvg = ({ className, handleClick }: IArrowSvg) => {
 	return (
 		<span onClick={handleClick}>
 			<svg
-				className={className}
+				className={`${className} cursor-pointer`}
 				aria-hidden="true"
 				fill="none"
 				stroke="#1F37B5"
