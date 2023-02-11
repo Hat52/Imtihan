@@ -1,9 +1,11 @@
 interface ICard {
 	isSelected: boolean;
 	move: string;
+	title: string;
+	description: string;
 }
 
-export default function Card({ isSelected, move }: ICard) {
+export default function Card({ isSelected, move, title, description }: ICard) {
 	// From Left to right
 	// !isSelected
 	// ? 'w-0 h-0 overflow-hidden left-0'
@@ -35,24 +37,8 @@ export default function Card({ isSelected, move }: ICard) {
 				className={`${
 					!isSelected ? 'w-0 h-0 overflow-hidden ' : ''
 				} transition-all duration-700`}>
-				<h4 className="text-typography text-center font-bold text-xl">Loops In programming</h4>
-				<p className="text-typography text-center">
-					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-					Ipsum has been the industry's standard dummy text ever since the 1500s, when an
-					unknown printer took a galley of type and scrambled it to make a type specimen book.
-					It has survived not only five centuries, but also the leap into electronic
-					typesetting, remaining essentially unchanged. It was popularised in the 1960s with
-					the release of Letraset sheets containing Lorem Ipsum passages, and more recently
-					with desktop publishing software like Aldus PageMaker including versions of Lorem
-					Ipsum. Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-					Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
-					unknown printer took a galley of type and scrambled it to make a type specimen book.
-					It has survived not only five centuries, but also the leap into electronic
-					typesetting, remaining essentially unchanged. It was popularised in the 1960s with
-					the release of Letraset sheets containing Lorem Ipsum passages, and more recently
-					with desktop publishing software like Aldus PageMaker including versions of Lorem
-					Ipsum.
-				</p>
+				<h4 className="text-typography text-center font-bold text-xl">{title}</h4>
+				<p className="text-typography text-center">{description}</p>
 			</div>
 		</div>
 	);
