@@ -36,9 +36,9 @@ export default function Card({ isSelected, move, title, description }: ICard) {
 			<div
 				className={`${
 					!isSelected ? 'w-0 h-0 overflow-hidden ' : ''
-				} transition-all duration-700`}>
+				} transition-all duration-700 px-2`}>
 				<h4 className="text-typography text-center font-bold text-xl">{title}</h4>
-				<p className="text-typography text-center">{description}</p>
+				<p className="text-typography text-left py-5">{description}</p>
 			</div>
 		</div>
 	);
