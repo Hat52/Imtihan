@@ -6,22 +6,17 @@ interface ICard {
 }
 
 export default function Card({ isSelected, move, title, description }: ICard) {
-	// From Left to right
-	// !isSelected
-	// ? 'w-0 h-0 overflow-hidden left-0'
-	// : 'card flex flex-col items-center left-1/2 transform -translate-x-1/2   overflow-scroll hide-scrollbar  gap-5 bg-[#1A1F1F] w-[350px] h-[500px] rounded-lg p-2 shadow-lg shadow-secondary'
-
 	const nextStep: any = {
 		end: {
 			visible: '',
-			hidden: 'left-full -translate-x-full '
+			hidden: 'left-full translate-x-full '
 		},
 		center: {
 			visible: 'left-1/2 -translate-x-1/2 ',
 			hidden: ''
 		},
 		start: {
-			visible: 'left-1/2 -translate-x-1/2',
+			visible: '-left-1/2 -translate-x-1/2',
 			hidden: 'left-0'
 		}
 	};
@@ -36,9 +31,9 @@ export default function Card({ isSelected, move, title, description }: ICard) {
 			<div
 				className={`${
 					!isSelected ? 'w-0 h-0 overflow-hidden ' : ''
-				} transition-all duration-700`}>
+				} transition-all duration-700 px-2`}>
 				<h4 className="text-typography text-center font-bold text-xl">{title}</h4>
-				<p className="text-typography text-center">{description}</p>
+				<p className="text-typography text-left py-5">{description}</p>
 			</div>
 		</div>
 	);

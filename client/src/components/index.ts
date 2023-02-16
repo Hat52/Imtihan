@@ -4,5 +4,4 @@ export { default as Select } from './Select';
 export { default as Stepper } from './Stepper';
 export { default as Card } from './Card';
 export { default as ArrowSvg } from './ArrowSVG';
-
-// export { Textfield, Button, Select, Stepper };
+export { default as Navbar } from './Navbar';
