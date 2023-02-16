@@ -6,11 +6,6 @@ interface ICard {
 }
 
 export default function Card({ isSelected, move, title, description }: ICard) {
-	// From Left to right
-	// !isSelected
-	// ? 'w-0 h-0 overflow-hidden left-0'
-	// : 'card flex flex-col items-center left-1/2 transform -translate-x-1/2   overflow-scroll hide-scrollbar  gap-5 bg-[#1A1F1F] w-[350px] h-[500px] rounded-lg p-2 shadow-lg shadow-secondary'
-
 	const nextStep: any = {
 		end: {
 			visible: '',
