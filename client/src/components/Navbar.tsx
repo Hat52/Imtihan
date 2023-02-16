@@ -18,7 +18,7 @@ export default function Navbar() {
 				<p className="text-typography font-normal text-lg">Imtihan</p>
 			</div>
 			<Link to="/">
-				<img src={Logout} />
+				<img src={Logout} className="w-[15px] h-[15px] md:w-[20px] md:h-[20px]" />
 			</Link>
 		</div>
 	);
