@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Logout from '../assets/img/logout.svg';
 
 export default function Navbar() {
@@ -16,7 +17,9 @@ export default function Navbar() {
 				</svg>
 				<p className="text-typography font-normal text-lg">Imtihan</p>
 			</div>
-			<img src={Logout} />
+			<Link to="/">
+				<img src={Logout} />
+			</Link>
 		</div>
 	);
 }
