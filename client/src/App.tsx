@@ -4,7 +4,7 @@ import './app.css';
 
 function App() {
 	return (
-		<div className="App w-screen h-screen flex justify-center items-center">
+		<div className="">
 			<RouterProvider router={routes} />
 		</div>
 	);
