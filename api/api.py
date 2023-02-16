@@ -1,39 +1,25 @@
-import ast
-import redis
-from creds import REDIS_HOST, REDIS_PASSWORD, REDIS_PORT
+from flask import Flask, jsonify,request
+from funcs import Database
 
-redis_client = redis.Redis(
-    host=REDIS_HOST, port=REDIS_PORT, password=REDIS_PASSWORD)
+app=Flask(__name__)
 
-class Database():
-    def __init__(self,username):
-        self.username=username
-    def CheckIfUserExists(user_id):
-        for key in redis_client.scan_iter():
-            if str(key)[2:-1] == str(user_id):
-                return True
+@app.route('/adduser')
+def AddUser():
+    username=request.args.get('username',None)
+    email=request.args.get('email',None)
+    password=request.args.get('password',None)
+    if Database.AddUser(username=username,email=email,password=password):
+        return 'Succsesfully added user to database',200
+    else:
+        return 'Error. user already exists',400
 
-    def DeleteAllUsers():
-        for key in redis_client.scan_iter():
-            redis_client.delete(key)
+@app.route('/userinfo')    
+def GetUserInfo():
+    username=request.args.get('username',None)
+    if Database.ShowSpecifcUserData(username=username)!=None:
+        return Database.ShowSpecifcUserData(username=username),200
+    else:
+        return 'Error. user does not exist',400
 
-    def ShowAllUsers():
-        users = list()
-        for user in redis_client.keys():
-            users.append(str(user)[2:-1])
-        return users
-
-    def AddUser(username,email,password):
-        initial_user_data = {
-            'username': username,
-            'categories': list(),
-            'password': password,
-            'email': email
-        }
-        redis_client.set(name=str(username), value=str(initial_user_data))
-
-
-    def ShowSpecifcUserData(user_id):
-        return ast.literal_eval(str(redis_client.get(name=str(user_id)))[2:-1])
-
-print(Database.ShowAllUsers())
+# work on validating login and hosting
+app.run(debug=True)  
