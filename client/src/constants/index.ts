@@ -10,3 +10,9 @@ export const cards = [
 		title: 'Loops In programming 2'
 	}
 ];
+
+export const options = [
+	{ name: 'option 1', value: 'option 1', href: '#' },
+	{ name: 'option 2', value: 'option 2', href: '#' },
+	{ name: 'option 3', value: 'option 3', href: '#' }
+];
