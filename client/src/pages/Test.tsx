@@ -4,23 +4,6 @@ import { cards } from '../constants';
 
 export default function Test() {
 	const [currentIndex, setCurrentIndex] = useState(0);
-	const [move, setMove] = useState('center');
-
-	const setNextMove = (towards: string) => {
-		if (towards === 'previous') {
-			if (move === 'center') {
-				setMove('start');
-				return;
-			}
-			setMove('center');
-			return;
-		}
-		if (move === 'start') {
-			setMove('center');
-		} else if (move === 'center') {
-			setMove('end');
-		}
-	};
 
 	const getMove = (index: number) => {
 		if (index === currentIndex) {
@@ -39,7 +22,6 @@ export default function Test() {
 				handleClick={() => {
 					if (currentIndex === 0) return;
 					setCurrentIndex(currentIndex - 1);
-					setNextMove('previous');
 				}}
 			/>
 			{cards.map(({ description, title }: any, index) => {
@@ -63,7 +45,6 @@ export default function Test() {
 				handleClick={() => {
 					if (currentIndex === cards.length - 1) return;
 					setCurrentIndex(currentIndex + 1);
-					setNextMove('next');
 				}}
 			/>
 		</div>
