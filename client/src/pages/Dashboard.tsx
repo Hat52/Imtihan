@@ -44,7 +44,7 @@ export default function Dashboard() {
 
 const StatsCard = ({ label, value }: IItem) => {
 	return (
-		<div className="state-card text-typography items-center hover:bg-dark-grey hover:scale-105 hover:text-white transition-all duration-500 rounded-[8px] gap-2 p-2 min-w-[200px] grow h-[100px] flex flex-col justify-center shadow-dark-grey shadow-md border border-dark-grey">
+		<div className="state-card text-typography cursor-default items-center hover:bg-dark-grey hover:scale-105 hover:text-white transition-all duration-500 rounded-[8px] gap-2 p-2 min-w-[200px] grow h-[100px] flex flex-col justify-center shadow-dark-grey shadow-md border border-dark-grey">
 			<h3 className="font-medium capitalize">{label}</h3>
 			<p className="font-light text-[20px]">{value}</p>
 		</div>
