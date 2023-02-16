@@ -3,7 +3,7 @@ import Logout from '../assets/img/logout.svg';
 
 export default function Navbar() {
 	return (
-		<div className="navbar absolute top-0 w-full h-[50px] bg-dark-grey flex shadow-sm items-center justify-between px-20">
+		<div className="navbar absolute top-0 w-full h-[50px] bg-dark-grey flex shadow-sm items-center justify-between px-5 md:px-20">
 			<div className="flex gap-2 items-center">
 				<svg xmlns="http://www.w3.org/2000/svg" width="34" height="34" viewBox="0 0 24 24">
 					<path
