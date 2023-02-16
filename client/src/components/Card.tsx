@@ -9,14 +9,14 @@ export default function Card({ isSelected, move, title, description }: ICard) {
 	const nextStep: any = {
 		end: {
 			visible: '',
-			hidden: 'left-full -translate-x-full '
+			hidden: 'left-full translate-x-full '
 		},
 		center: {
 			visible: 'left-1/2 -translate-x-1/2 ',
 			hidden: ''
 		},
 		start: {
-			visible: 'left-1/2 -translate-x-1/2',
+			visible: '-left-1/2 -translate-x-1/2',
 			hidden: 'left-0'
 		}
 	};
