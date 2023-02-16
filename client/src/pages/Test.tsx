@@ -21,6 +21,17 @@ export default function Test() {
 			setMove('end');
 		}
 	};
+
+	const getMove = (index: number) => {
+		if (index === currentIndex) {
+			return 'center';
+		} else if (index === currentIndex - 1) {
+			return 'end';
+		}
+
+		return 'start';
+	};
+
 	return (
 		<div className="w-screen h-screen justify-center gap-[50%] flex overflow-hidden items-center">
 			<ArrowSvg
@@ -40,13 +51,7 @@ export default function Test() {
 					return (
 						<Card
 							isSelected={index === currentIndex}
-							move={
-								index === currentIndex
-									? 'center'
-									: index === currentIndex - 1
-									? 'end'
-									: 'start'
-							}
+							move={getMove(index)}
 							description={description}
 							title={title}
 						/>
