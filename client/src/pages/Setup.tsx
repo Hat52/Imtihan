@@ -1,11 +1,6 @@
 import { useState } from 'react';
 import { Select, ArrowSvg } from '../components';
-
-const options = [
-	{ name: 'option 1', value: 'option 1', href: '#' },
-	{ name: 'option 2', value: 'option 2', href: '#' },
-	{ name: 'option 3', value: 'option 3', href: '#' }
-];
+import { options } from '../constants';
 
 export default function Setup() {
 	const [activeStep, setActiveStep] = useState(1);
