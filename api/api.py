@@ -21,5 +21,14 @@ def GetUserInfo():
     else:
         return 'Error. user does not exist',400
 
-# work on validating login and hosting
+@app.route('/validate')
+def Validate():
+    username=request.args.get('username',None)
+    password=request.args.get('password',None)
+    print(password,username)
+    if Database.ValidateLogin(username=username,password=password):
+        return 'Correct Details!',200
+    else:
+        return f"Incorrect details",400
+
 app.run(debug=True)  

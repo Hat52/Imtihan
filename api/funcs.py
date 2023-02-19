@@ -41,9 +41,17 @@ class Database():
             return ast.literal_eval(str(redis_client.get(name=str(username)))[2:-1])
         else:
             return None
+    
+    def ValidateLogin(username,password):
+        if Database.CheckIfUserExists(username=username):
+            if Database.ShowSpecifcUserData(username=username)['password']==password:
+                print(Database.ShowSpecifcUserData(username=username)['password'])
+                return True
+        else:
+            return False
 
 #print(Database.ShowAllUsers())
-#print(Database.AddUser('wwww','ww','www'))
+print(Database.AddUser('realhardik','r','123'))
 #print(Database.ShowSpecifcUserData('wwww'))
 #Database.DeleteAllUsers()
 #WORK ON Validating login
